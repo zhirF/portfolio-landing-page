@@ -4,69 +4,141 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zheer Dana — Data Science Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
+  <meta name="description" content="Zheer Dana — Data Science projects in NLP, clustering, time series, and analytics." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    .grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { border: 1px solid #e5e7eb; padding: 1rem; border-radius: 12px; }
-    .pill { font-size: 0.8rem; padding: 0.15rem 0.5rem; border: 1px solid #d1d5db; border-radius: 999px; }
-    .muted { color: #6b7280; font-size: 0.95rem; }
+    :root{
+      --bg:#0f172a; --card:#111827; --muted:#94a3b8; --txt:#e5e7eb; --accent:#22d3ee; --accent-2:#a78bfa; --line:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1224, #0f172a);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(167,139,250,.25)}
+    .tagline{color:var(--muted);font-size:14px}
+    .btns a{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--txt);margin-left:8px;background:#0b1020}
+    .btns a.primary{background:linear-gradient(135deg,#22d3ee55,#a78bfa55);border-color:transparent}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:28px 0}
+    .hero h1{font-size:42px;line-height:1.15;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 14px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#cbd5e1;background:#0b1020}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:10px}
+    .card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s, border-color .2s}
+    .card:hover{transform:translateY(-3px);border-color:#273043}
+    .pill{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#cbd5e1;background:#0b1020;display:inline-block}
+    .card h3{margin:10px 0 6px;font-size:18px}
+    .card p{margin:0 0 10px;color:#cbd5e1}
+    .links a{margin-right:10px}
+    .footer{margin:36px 0 8px;color:var(--muted);text-align:center;font-size:13px}
+    @media (max-width:860px){ .hero{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Zheer Dana</h1>
-    <p class="muted">Master’s student • Data scientist • NLP, clustering, time series</p>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <strong>Zheer Dana</strong><br>
+          <span class="tagline">Data Science · NLP · Clustering · Time Series</span>
+        </div>
+      </div>
+      <div class="btns">
+        <a class="primary" href="https://github.com/zhirf" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:your_email@example.com">Contact</a>
+        <a href="resume.pdf">Resume</a>
+      </div>
+    </header>
 
-  <main>
+    <section class="hero">
+      <div>
+        <h1>Projects that show signal, not fluff.</h1>
+        <p>Short write-ups, downloadable slides, and reproducible notebooks. Each project includes the dataset sources and clean visuals.</p>
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">scikit-learn</span>
+          <span class="badge">pandas</span>
+          <span class="badge">matplotlib</span>
+          <span class="badge">NLP</span>
+          <span class="badge">Clustering</span>
+          <span class="badge">Time Series</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Tableau</span>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <span class="pill">Latest</span>
+          <h3>BBC News Topic Modeling (LDA)</h3>
+          <p>Count & TF-IDF, LDA with coherence/perplexity, top-words per topic, docs per topic.</p>
+          <div class="links">
+            <a href="projects/topic_modeling.html">Project</a>
+            <a href="assets/presentations/Topic_Modeling_Presentation.pptx">Slides</a>
+            <a href="https://mlg.ucd.ie/datasets/bbc.html">Dataset</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <h2>Projects</h2>
     <div class="grid">
-      <section class="card">
+      <div class="card">
         <span class="pill">Classification · NLP</span>
         <h3>Airline Tweet Sentiment</h3>
         <p>BoW vs TF-IDF with Logistic Regression, SVM, Random Forest. Clear confusion matrices and per-class metrics.</p>
-        <p>
-          <a href="projects/classification.html">Project page</a> ·
+        <div class="links">
+          <a href="projects/classification.html">Project</a>
+          <a href="assets/presentations/Sentiment_Analysis_Presentation.pptx">Slides</a>
           <a href="https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment">Dataset</a>
-        </p>
-      </section>
+        </div>
+      </div>
 
-      <section class="card">
+      <div class="card">
         <span class="pill">Topic Modeling</span>
         <h3>BBC News Topics (LDA)</h3>
-        <p>Count & TF-IDF, LDA with coherence/perplexity, top-words barplots, docs per topic.</p>
-        <p>
-          <a href="projects/topic_modeling.html">Project page</a> ·
+        <p>Unsupervised structure discovery in news articles. Strong, readable visuals and inline metrics.</p>
+        <div class="links">
+          <a href="projects/topic_modeling.html">Project</a>
+          <a href="assets/presentations/Topic_Modeling_Presentation.pptx">Slides</a>
           <a href="https://mlg.ucd.ie/datasets/bbc.html">Dataset</a>
-        </p>
-      </section>
+        </div>
+      </div>
 
-      <section class="card">
+      <div class="card">
         <span class="pill">Clustering</span>
         <h3>Customer Segmentation</h3>
-        <p>K-Means, Elbow, PCA, customer profiling; tidy visual dashboard.</p>
-        <p><a href="projects/clustering.html">Project page</a></p>
-      </section>
+        <p>K-Means, Elbow, PCA for profile insights. Optional Streamlit dashboard.</p>
+        <div class="links">
+          <a href="projects/clustering.html">Project</a>
+        </div>
+      </div>
 
-      <section class="card">
+      <div class="card">
         <span class="pill">SQL</span>
         <h3>SQL Analysis Mini-Pack</h3>
-        <p>Cohort, retention, joins & windows; crisp queries with visuals (generated separately).</p>
-        <p><a href="projects/sql.html">Project page</a></p>
-      </section>
+        <p>Cohorts, retention, windows, and tidy queries with small visuals.</p>
+        <div class="links">
+          <a href="projects/sql.html">Project</a>
+        </div>
+      </div>
 
-      <section class="card">
+      <div class="card">
         <span class="pill">Tableau</span>
         <h3>Interactive Dashboard</h3>
-        <p>Clean story points, simple interactivity, no KPI spam.</p>
-        <p><a href="projects/tableau.html">Project page</a></p>
-      </section>
+        <p>Clean story, simple interactivity, no KPI spam.</p>
+        <div class="links">
+          <a href="projects/tableau.html">Project</a>
+        </div>
+      </div>
     </div>
-  </main>
 
-  <footer>
-    <p class="muted">© <span id="y"></span> Zheer Dana · <a href="https://github.com/zhirf">GitHub</a></p>
-  </footer>
+    <p class="footer">© <span id="y"></span> Zheer Dana · <a href="https://github.com/zhirf">GitHub</a></p>
+  </div>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
