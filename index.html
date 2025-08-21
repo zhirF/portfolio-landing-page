@@ -4,43 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zhir Farooq — Data Portfolio</title>
-  <meta name="description" content="Zhir Farooq — projects in  data mining, machine learning, analytics." />
+  <meta name="description" content="Zhir Farooq — projects in data mining, machine learning, analytics." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      /* NEW PALETTE: charcoal base, mint accent */
-      --bg:#0c0e12;        /* charcoal */
-      --panel:#11141a;     /* card bg */
-      --line:#202632;      /* hairline */
-      --txt:#eef2f7;       /* soft white */
-      --muted:#9aa6b2;     /* mist */
-      --mint:#63f5c6;      /* mint accent */
-      --mint2:#7aa7ff;     /* cool hover */
+      --bg:#0c0e12;
+      --panel:#11141a;
+      --line:#202632;
+      --txt:#eef2f7;
+      --muted:#9aa6b2;
+      --mint:#63f5c6;
+      --mint2:#7aa7ff;
       --shadow:0 16px 36px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0d11,#0c0e12);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
     a{color:var(--mint);text-decoration:none;transition:color .2s,opacity .2s}
     a:hover{color:var(--mint2)}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0 22px;border-bottom:1px solid var(--line)}
-    /* BRAND: no logo box anymore */
-    .brand{display:flex;flex-direction:column;gap:4px}
-    .brand .name{font-weight:800;font-size:24px;letter-spacing:.2px}
-    .brand .tagline{color:var(--muted);font-size:14px}
-    .btns a{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--txt);margin-left:8px;background:transparent}
+    .wrap{max-width:1100px;margin:0 auto;padding:40px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0 28px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;flex-direction:column;gap:6px}
+    .brand .name{font-weight:800;font-size:26px}
+    .brand .tagline{color:var(--muted);font-size:15px}
+    .btns a{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:10px;color:var(--txt);margin-left:10px;background:transparent}
     .btns a.primary{border-color:var(--mint);color:var(--mint)}
-    h2{margin:30px 0 8px}
-    .folder-note{color:var(--muted); margin:0 0 10px; font-size:14px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:12px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .18s,border-color .18s,box-shadow .18s}
-    .card:hover{transform:translateY(-4px);border-color:#2a3444;box-shadow:var(--shadow)}
-    .pill{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#d7dee6;background:#0f1318;display:inline-block}
-    .card h3{margin:10px 0 6px;font-size:18px}
-    .card p{margin:0 0 10px;color:#cfd6de}
-    .links a{margin-right:12px;white-space:nowrap}
-    .footer{margin:38px 0 8px;color:var(--muted);text-align:center;font-size:13px}
+    h2{margin:40px 0 12px}
+    .folder-note{color:var(--muted); margin:0 0 14px; font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:16px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .18s,border-color .18s,box-shadow .18s}
+    .card:hover{transform:translateY(-5px);border-color:#2a3444;box-shadow:var(--shadow)}
+    .pill{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:#d7dee6;background:#0f1318;display:inline-block}
+    .card h3{margin:12px 0 8px;font-size:18px}
+    .card p{margin:0 0 14px;color:#cfd6de;font-size:15px;line-height:1.4}
+    .links a{margin-right:14px;white-space:nowrap}
+    .footer{margin:50px 0 8px;color:var(--muted);text-align:center;font-size:13px}
     @media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
     @media (max-width:640px){ .grid{grid-template-columns:1fr;} }
   </style>
@@ -50,11 +48,10 @@
     <header>
       <div class="brand">
         <div class="name">Zhir Farooq</div>
-        <div class="tagline"> Data Mining · Machine Learning · Analytics</div>
+        <div class="tagline">Data Mining · Machine Learning · Analytics</div>
       </div>
       <div class="btns">
         <a class="primary" href="https://github.com/zhirf" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:zhir.farooq99@gmail.com">Contact</a>
         <a href="resume.pdf">Resume</a>
       </div>
     </header>
@@ -66,7 +63,7 @@
       <div class="card">
         <span class="pill">Logistic Regression</span>
         <h3>Airline Sentiment — LR</h3>
-        <p>BoW vs TF-IDF; per-class metrics and confusion matrix.</p>
+        <p>Built a simple model to classify tweets about airlines as positive, negative, or neutral.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/Logistic%20Regression/Logistic%20Regression.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/Logistic%20Regression/logistic_regression_presentation.pdf">Slides</a>
@@ -75,7 +72,7 @@
       <div class="card">
         <span class="pill">Random Forest</span>
         <h3>Airline Sentiment — RF</h3>
-        <p>Tree ensemble vs linear baselines; feature comparison.</p>
+        <p>Used tree-based models to improve sentiment prediction and compare with logistic regression.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/Random%20Forest/Random%20Forest.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/Random%20Forest/random_forest_presentation.pdf">Slides</a>
@@ -84,7 +81,7 @@
       <div class="card">
         <span class="pill">SVM</span>
         <h3>Airline Sentiment — SVM</h3>
-        <p>Linear SVC on TF-IDF; strong overall performance.</p>
+        <p>Applied Support Vector Machines on TF-IDF features for stronger sentiment results.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/SVM/SVM.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Classification/SVM/svm_presentation.pdf">Slides</a>
@@ -99,7 +96,7 @@
       <div class="card">
         <span class="pill">Topic Modeling</span>
         <h3>BBC News Topics (LDA)</h3>
-        <p>Count & TF-IDF; LDA with coherence/perplexity; top words per topic.</p>
+        <p>Grouped BBC articles into themes using LDA. Clear word patterns and topic insights.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/NLP/Topic%20Modeling/Topic%20Modeling.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/NLP/Topic%20Modeling/Topic_Modeling_Presentation.pdf">Slides</a>
@@ -108,7 +105,7 @@
       <div class="card">
         <span class="pill">Classification · NLP</span>
         <h3>Twitter Airline Sentiment</h3>
-        <p>Benchmark sentiment modeling with readable reports and charts.</p>
+        <p>Analyzed airline-related tweets to find overall mood and highlight tricky cases.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/NLP/Sentiment%20Analysis/Sentiment%20Analysis.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/NLP/Sentiment%20Analysis/Sentiment_Analysis_Portfolio.pdf">Slides</a>
@@ -123,7 +120,7 @@
       <div class="card">
         <span class="pill">Spectral</span>
         <h3>Digits — Spectral Clustering</h3>
-        <p>Non-linear clusters on image digits; visual separation.</p>
+        <p>Separated handwritten digit images into groups without labels.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Digits_Spectral/Digits.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Digits_Spectral/Digits_Spectral_Presentation.pdf">Slides</a>
@@ -132,7 +129,7 @@
       <div class="card">
         <span class="pill">K-Means</span>
         <h3>Iris — K-Means</h3>
-        <p>Elbow selection & PCA visualization; compact profiles.</p>
+        <p>Grouped iris flowers into clusters and visualized them with PCA.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Iris_KMeans/Iris.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Iris_KMeans/Iris_KMeans_Presentation.pdf">Slides</a>
@@ -141,7 +138,7 @@
       <div class="card">
         <span class="pill">Agglomerative</span>
         <h3>Wine — Hierarchical</h3>
-        <p>Dendrogram intuition and cluster-wise wine traits.</p>
+        <p>Explored wine dataset with hierarchical clustering and dendrograms.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Wine%20Agglomerative/Wine.ipynb">Notebook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Clustering/Wine%20Agglomerative/Wine_Agglomerative_Presentation.pdf">Slides</a>
@@ -156,7 +153,7 @@
       <div class="card">
         <span class="pill">SQL</span>
         <h3>COVID Exploring</h3>
-        <p>Exploratory queries for trends and segments.</p>
+        <p>Looked at COVID trends with simple SQL queries.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/SQL/Covid%20Exploring.sql">SQL File</a>
         </div>
@@ -164,7 +161,7 @@
       <div class="card">
         <span class="pill">SQL</span>
         <h3>US Housing — Cleaning</h3>
-        <p>Data cleaning patterns with window and string ops.</p>
+        <p>Cleaned housing data using SQL string and window functions.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/SQL/Data%20Cleaning%20for%20housing%20in%20US%20(SQL).sql">SQL File</a>
         </div>
@@ -178,7 +175,7 @@
       <div class="card">
         <span class="pill">Tabular</span>
         <h3>Synthetic Replication</h3>
-        <p>Privacy-aware replication with fidelity checks.</p>
+        <p>Created synthetic datasets that mimic real data while keeping privacy.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Synthetic%20Data%20Generation/Synthetic%20Replication.ipynb">Notebook</a>
         </div>
@@ -186,7 +183,7 @@
       <div class="card">
         <span class="pill">Time Series</span>
         <h3>Synthetic Time Series</h3>
-        <p>Generate series with preserved patterns/statistics.</p>
+        <p>Generated time series with realistic trends and patterns.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Synthetic%20Data%20Generation/Synthetic%20Time%20Series.ipynb">Notebook</a>
         </div>
@@ -200,7 +197,7 @@
       <div class="card">
         <span class="pill">Interactive</span>
         <h3>King County Housing</h3>
-        <p>Workbook + PDF dashboard and slides.</p>
+        <p>Built an interactive Tableau dashboard for house prices in King County.</p>
         <div class="links">
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Tableau/KingCounty/KingCounty.twbx">Workbook</a>
           <a target="_blank" href="https://github.com/zhirf/projects/blob/main/Tableau/KingCounty/Dashboard.pdf">Dashboard</a>
