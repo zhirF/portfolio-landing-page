@@ -4,15 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zhir Farooq — Data Science Portfolio</title>
-  <meta name="description" content="Zhir Farooq — Data Science projects in NLP, clustering, time series, and analytics." />
+  <meta name="description" content="Zhir Farooq — Data Science projects in NLP, classification, clustering, SQL, synthetic data, and Tableau." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0f172a; --card:#111827; --muted:#94a3b8; --txt:#e5e7eb; --accent:#22d3ee; --accent-2:#a78bfa; --line:#1f2937;
-    }
+    :root{ --bg:#0f172a; --card:#111827; --muted:#94a3b8; --txt:#e5e7eb; --accent:#22d3ee; --accent-2:#a78bfa; --line:#1f2937; }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1224, #0f172a);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1224,#0f172a);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px;border-bottom:1px solid var(--line)}
@@ -22,15 +20,16 @@
     .btns a{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--txt);margin-left:8px;background:#0b1020}
     .btns a.primary{background:linear-gradient(135deg,#22d3ee55,#a78bfa55);border-color:transparent}
     h2{margin:28px 0 10px}
-    .section{margin-top:22px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:10px}
-    .card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s, border-color .2s}
+    .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:12px}
+    .card{background:rgba(255,255,255,0.03);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s,border-color .2s}
     .card:hover{transform:translateY(-3px);border-color:#273043}
     .pill{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#cbd5e1;background:#0b1020;display:inline-block}
     .card h3{margin:10px 0 6px;font-size:18px}
     .card p{margin:0 0 10px;color:#cbd5e1}
-    .links a{margin-right:10px}
+    .links a{margin-right:10px;white-space:nowrap}
     .footer{margin:36px 0 8px;color:var(--muted);text-align:center;font-size:13px}
+    @media (max-width:900px){ .row{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width:640px){ .row{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -39,95 +38,210 @@
       <div class="brand">
         <div class="logo"></div>
         <div>
-          <!-- If you prefer first name only, change the next line to: <strong>Zhir</strong> -->
+          <!-- If you prefer first name only, change to: <strong>Zhir</strong> -->
           <strong>Zhir Farooq</strong><br>
           <span class="tagline">Data Science · NLP · Clustering · Time Series</span>
         </div>
       </div>
       <div class="btns">
         <a class="primary" href="https://github.com/zhirf" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:zhir.farooq99@gmail.com">Contact</a>
+        <a href="mailto:your_email@example.com">Contact</a>
         <a href="resume.pdf">Resume</a>
       </div>
     </header>
 
-    <!-- CLASSIFICATION -->
-    <section class="section" id="classification">
+    <!-- CLASSIFICATION (3 projects on one line) -->
+    <section id="classification">
       <h2>Classification</h2>
-      <div class="grid">
+      <div class="row">
         <div class="card">
-          <span class="pill">NLP · Multi-class</span>
-          <h3>Airline Tweet Sentiment</h3>
-          <p>BoW vs TF-IDF with Logistic Regression, SVM, Random Forest. Clear confusion matrices, per-class metrics.</p>
+          <span class="pill">Logistic Regression</span>
+          <h3>Airline Sentiment — LR</h3>
+          <p>BoW vs TF-IDF; clear per-class metrics and confusion matrix.</p>
           <div class="links">
-            <a href="projects/classification.html">Project</a>
-            <a href="assets/presentations/Sentiment_Analysis_Presentation.pptx">Slides</a>
-            <a href="https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment">Dataset</a>
+            <a href="Classification/Logistic Regression/Logistic Regression.ipynb">Notebook</a>
+            <a href="Classification/Logistic Regression/logistic_regression_presentation.pdf">Slides</a>
           </div>
         </div>
-        <!-- Add more classification projects here if needed -->
+        <div class="card">
+          <span class="pill">Random Forest</span>
+          <h3>Airline Sentiment — RF</h3>
+          <p>Tree-based classifier with feature comparison vs linear baselines.</p>
+          <div class="links">
+            <a href="Classification/Random Forest/Random Forest.ipynb">Notebook</a>
+            <a href="Classification/Random Forest/random_forest_presentation.pdf">Slides</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">SVM</span>
+          <h3>Airline Sentiment — SVM</h3>
+          <p>Linear SVC; strongest overall performance on TF-IDF features.</p>
+          <div class="links">
+            <a href="Classification/SVM/SVM.ipynb">Notebook</a>
+            <a href="Classification/SVM/svm_presentation.pdf">Slides</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- TOPIC MODELING -->
-    <section class="section" id="topic-modeling">
-      <h2>Topic Modeling</h2>
-      <div class="grid">
+    <!-- TOPIC MODELING (NLP) -->
+    <section id="nlp">
+      <h2>Topic Modeling (NLP)</h2>
+      <div class="row">
         <div class="card">
-          <span class="pill">Unsupervised NLP</span>
-          <h3>BBC News Topics (LDA)</h3>
-          <p>Count & TF-IDF, LDA with coherence/perplexity, top-words per topic, docs per topic.</p>
+          <span class="pill">LDA</span>
+          <h3>BBC News Topic Modeling</h3>
+          <p>Count & TF-IDF; LDA with coherence/perplexity; top words by topic.</p>
           <div class="links">
-            <a href="projects/topic_modeling.html">Project</a>
-            <a href="assets/presentations/Topic_Modeling_Presentation.pptx">Slides</a>
-            <a href="https://mlg.ucd.ie/datasets/bbc.html">Dataset</a>
+            <a href="NLP/Topic Modeling/Topic Modeling.ipynb">Notebook</a>
+            <a href="NLP/Topic Modeling/Topic_Modeling_Presentation.pdf">Slides</a>
           </div>
         </div>
-        <!-- (Optional) Add BERTopic comparison page later -->
+        <div class="card">
+          <span class="pill">Classification · NLP</span>
+          <h3>Twitter Airline Sentiment</h3>
+          <p>Benchmark sentiment modeling with readable reports and charts.</p>
+          <div class="links">
+            <a href="NLP/Sentiment Analysis/Sentiment Analysis.ipynb">Notebook</a>
+            <a href="NLP/Sentiment Analysis/Sentiment_Analysis_Portfolio.pdf">Slides</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">—</span>
+          <h3>More NLP (slot)</h3>
+          <p>Reserve a spot for BERTopic or embeddings-based variants.</p>
+          <div class="links">
+            <a href="#">Notebook</a>
+            <a href="#">Slides</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- CLUSTERING -->
-    <section class="section" id="clustering">
+    <!-- CLUSTERING (3 on one line) -->
+    <section id="clustering">
       <h2>Clustering</h2>
-      <div class="grid">
+      <div class="row">
         <div class="card">
-          <span class="pill">Customer Analytics</span>
-          <h3>Customer Segmentation</h3>
-          <p>K-Means, Elbow, PCA; concise profiling, optional Streamlit dashboard.</p>
+          <span class="pill">Spectral</span>
+          <h3>Digits — Spectral Clustering</h3>
+          <p>Non-linear clusters on image digits; visual separation.</p>
           <div class="links">
-            <a href="projects/clustering.html">Project</a>
+            <a href="Clustering/Digits_Spectral/Digits.ipynb">Notebook</a>
+            <a href="Clustering/Digits_Spectral/Digits_Spectral_Presentation.pdf">Slides</a>
           </div>
         </div>
-        <!-- Add more clustering projects here -->
+        <div class="card">
+          <span class="pill">K-Means</span>
+          <h3>Iris — K-Means</h3>
+          <p>Elbow selection & PCA visualization; compact profiles.</p>
+          <div class="links">
+            <a href="Clustering/Iris_KMeans/Iris.ipynb">Notebook</a>
+            <a href="Clustering/Iris_KMeans/Iris_KMeans_Presentation.pdf">Slides</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Agglomerative</span>
+          <h3>Wine — Hierarchical</h3>
+          <p>Dendrogram intuition and cluster-wise wine traits.</p>
+          <div class="links">
+            <a href="Clustering/Wine Agglomerative/Wine.ipynb">Notebook</a>
+            <a href="Clustering/Wine Agglomerative/Wine_Agglomerative_Presentation.pdf">Slides</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SQL -->
-    <section class="section" id="sql">
+    <!-- SQL (2 on one line; third slot reserved) -->
+    <section id="sql">
       <h2>SQL</h2>
-      <div class="grid">
+      <div class="row">
         <div class="card">
-          <span class="pill">Analytics</span>
-          <h3>SQL Analysis Mini-Pack</h3>
-          <p>Cohorts, retention, joins & windows; crisp queries with small visuals.</p>
+          <span class="pill">SQL</span>
+          <h3>COVID Exploring</h3>
+          <p>Exploratory queries for trends and segments.</p>
           <div class="links">
-            <a href="projects/sql.html">Project</a>
+            <a href="SQL/Covid Exploring.sql">SQL File</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">SQL</span>
+          <h3>US Housing — Cleaning</h3>
+          <p>Data cleaning patterns with window and string ops.</p>
+          <div class="links">
+            <a href="SQL/Data Cleaning for housing in US (SQL).sql">SQL File</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">—</span>
+          <h3>More SQL (slot)</h3>
+          <p>Add another case study or warehouse model.</p>
+          <div class="links">
+            <a href="#">SQL</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYNTHETIC DATA (2 on one line; third slot reserved) -->
+    <section id="synthetic">
+      <h2>Synthetic Data Generation</h2>
+      <div class="row">
+        <div class="card">
+          <span class="pill">Tabular</span>
+          <h3>Synthetic Replication</h3>
+          <p>Privacy-aware replication with fidelity checks.</p>
+          <div class="links">
+            <a href="Synthetic Data Generation/Synthetic Replication.ipynb">Notebook</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Time Series</span>
+          <h3>Synthetic Time Series</h3>
+          <p>Patterns + statistics preserved for safe sharing.</p>
+          <div class="links">
+            <a href="Synthetic Data Generation/Synthetic Time Series.ipynb">Notebook</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">—</span>
+          <h3>More Synth (slot)</h3>
+          <p>GANs, diffusion, or copulas experiments.</p>
+          <div class="links">
+            <a href="#">Notebook</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- TABLEAU -->
-    <section class="section" id="tableau">
+    <section id="tableau">
       <h2>Tableau</h2>
-      <div class="grid">
+      <div class="row">
         <div class="card">
           <span class="pill">Interactive</span>
-          <h3>Tableau Dashboard</h3>
-          <p>Clean story, simple interactivity, no KPI spam.</p>
+          <h3>King County Housing</h3>
+          <p>Dashboard + presentation for housing insights.</p>
           <div class="links">
-            <a href="projects/tableau.html">Project</a>
+            <a href="Tableau/KingCounty/KingCounty.twbx">Workbook</a>
+            <a href="Tableau/KingCounty/Dashboard.pdf">Dashboard</a>
+            <a href="Tableau/KingCounty/KingCounty_Housing_Presentation.pdf">Slides</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">—</span>
+          <h3>More Tableau (slot)</h3>
+          <p>Add another dashboard or embedded public link.</p>
+          <div class="links">
+            <a href="#">Workbook</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">—</span>
+          <h3>More Tableau (slot)</h3>
+          <p>Space reserved to keep one-row layout.</p>
+          <div class="links">
+            <a href="#">Workbook</a>
           </div>
         </div>
       </div>
@@ -137,7 +251,7 @@
   </div>
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-    // If you choose first-name only branding:
+    // If you prefer first name branding:
     // document.getElementById("name").textContent = "Zhir";
   </script>
 </body>
